@@ -12,7 +12,7 @@ export function Header(props: HeaderProps) {
         <header className="flex flex-col items-center mb-20 md:mb-20">
           <Image 
             src={thirdwebIcon} 
-            alt="Thirdweb" 
+            alt="OctopusX" 
             width={120}
           />
           <h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-6 text-zinc-100">
