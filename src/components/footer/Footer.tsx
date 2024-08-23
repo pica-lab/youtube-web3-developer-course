@@ -17,8 +17,13 @@ export function Footer() {
                     <a className="hover:underline">Community</a>
                 </Link>
             </div>
-            <div className="text-sm">
-                &copy; {new Date().getFullYear()} Octopus X . All rights reserved.
+            <div className="flex flex-col items-center">
+                <Link href="/" passHref>
+                    <a className="hover:underline text-blue-400">Back to Home</a>
+                </Link>
+                <div className="text-sm mt-4">
+                    &copy; {new Date().getFullYear()} Octopus X . All rights reserved.
+                </div>
             </div>
         </footer>
     )
