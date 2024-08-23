@@ -3,7 +3,7 @@ import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/footer/Footer";
 import { ConnectButton, useActiveAccount, useActiveWallet, useConnect, useDisconnect } from "thirdweb/react";
 import { client } from "../client";
-import { sepolia } from "thirdweb/chains";
+import { optimism } from "thirdweb/chains";
 import { createWallet } from "thirdweb/wallets";
 
 const AccountAbstractionPage: React.FC = () => {
@@ -16,86 +16,87 @@ const AccountAbstractionPage: React.FC = () => {
             <CustomFlows />
             <Footer />
         </div>
-    )
+    );
 };
 
 function CustomFlows() {
     return (
-      <div className="grid gap-4 lg:grid-cols-3 justify-center">
-        <DefaultAccountFactory />
-        <CustomAccountFactory />
-        <CustomAAConnectFlow />
-      </div>
+        <div className="grid gap-4 lg:grid-cols-3 justify-center">
+            <DefaultAccountFactory />
+            <CustomAccountFactory />
+            <CustomAAConnectFlow />
+        </div>
     );
 }
 
 // Default Account Abstraction with ConnectButton
 // Use the default account factory contract
-function DefaultAccountFactory () {
+function DefaultAccountFactory() {
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Default Account Factory</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Default Account Factory</p>
             <ConnectButton
                 client={client}
                 accountAbstraction={{
-                    chain: sepolia,
-                    sponsorGas: true
+                    chain: optimism,
+                    sponsorGas: true,
                 }}
+                showThirdwebBranding={false} // Hide Thirdweb branding
             />
         </div>
-    )
+    );
 }
 
 // Custom Account Abstraction with ConnectButton
 // Deploy your own account factory contract
-function CustomAccountFactory () {
+function CustomAccountFactory() {
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Custom Account Factory</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Custom Account Factory</p>
             <ConnectButton
                 client={client}
                 accountAbstraction={{
-                    factoryAddress: "0xB724c771d34dE6f93764D6d8D6924F3108e8d426",
-                    chain: sepolia,
-                    sponsorGas: true
+                    factoryAddress: "0xB724c771d34dE6f93764D6d8D6924F3108e8d426", // Your custom factory address
+                    chain: optimism,
+                    sponsorGas: true,
                 }}
+                showThirdwebBranding={false} // Hide Thirdweb branding
             />
         </div>
-    )
+    );
 }
 
 // Build a custom AA connect flow
-function CustomAAConnectFlow () {
+function CustomAAConnectFlow() {
     // Get active account and wallet
     const account = useActiveAccount();
     const connectedWallet = useActiveWallet();
 
     // Get connect and disconnect functions
-    // Configure the account abstraction chain and sponsor gas
     const { connect } = useConnect({
         client: client,
         accountAbstraction: {
-            chain: sepolia,
-            sponsorGas: true
+            chain: optimism,
+            sponsorGas: true,
         },
     });
     const { disconnect } = useDisconnect();
 
     // Create wallet and connect
     const connectSmartWallet = async () => {
-        connect(async() => {
+        connect(async () => {
             const wallet = createWallet("io.metamask");
             await wallet.connect({
                 client: client,
-                chain: sepolia,
+                chain: optimism,
             });
             return wallet;
-        })
+        });
     };
 
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Custom AA Connect Flow</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Custom AA Connect Flow</p>
             {account && connectedWallet ? (
                 <button
                     className="bg-zinc-800 text-zinc-300 px-4 py-2 rounded-lg"
@@ -112,7 +113,7 @@ function CustomAAConnectFlow () {
                 </button>
             )}
         </div>
-    )
+    );
 }
 
 export default AccountAbstractionPage;
