@@ -17,6 +17,51 @@
 
 @layer base {
 	body {
-		@apply bg-zinc-950 text-neutral-200;
+		@apply bg-zinc-950 text-neutral-200 flex items-center justify-center min-h-screen;
 	}
+}
+
+.grid-container {
+	@apply grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 py-12 max-w-5xl mx-auto;
+}
+
+.card {
+	@apply bg-zinc-800 p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl;
+}
+
+.card-title {
+	@apply text-xl font-bold text-white mb-4;
+}
+
+.card-subtitle {
+	@apply text-neutral-400;
+}
+
+/* Adding some gradient and light effects for a modern look */
+body::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+	transform: translate(-50%, -50%);
+	z-index: 0;
+	pointer-events: none;
+}
+
+body::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(115deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+	mix-blend-mode: overlay;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.content-container {
+	position: relative;
+	z-index: 10; /* Ensure the content stays above the background effects */
 }
