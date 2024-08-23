@@ -15,7 +15,7 @@ const ConnectButtonPage: React.FC = () => {
             <ConnectButtons />
             <Footer />
         </div>
-    )
+    );
 };
 
 function ConnectButtons() {
@@ -29,29 +29,30 @@ function ConnectButtons() {
     );
 }
 
-//Default ConnectButton UI Component
+// Default ConnectButton UI Component
 function DefaultConnectButton() {
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Default ConnectButton Component</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Default ConnectButton Component</p>
             <ConnectButton
                 client={client}
-                //Change modal size to compact or wide
+                // Change modal size to compact or wide
                 connectModal={{
-                    size: "compact"
+                    size: "compact",
+                    showThirdwebBranding: false, // Hide Thirdweb branding
                 }}
             />
         </div>
-    )
+    );
 }
 
-//Customize Wallets Displayed in ConnectButton
+// Customize Wallets Displayed in ConnectButton
 function CustomWallets() {
-    //Create an array of recommended wallets
+    // Create an array of recommended wallets
     const recommendedWallets = [
         createWallet("com.coinbase.wallet"),
     ];
-    //Create an array of wallets to display
+    // Create an array of wallets to display
     const wallets = [
         createWallet("com.coinbase.wallet"),
         createWallet("io.metamask"),
@@ -62,23 +63,26 @@ function CustomWallets() {
 
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Customize Wallets Displayed</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Customize Wallets Displayed</p>
             <ConnectButton
                 client={client}
-                //Display custom wallets
+                // Display custom wallets
                 wallets={wallets}
-                //Display recommended wallets
+                // Display recommended wallets
                 recommendedWallets={recommendedWallets}
+                connectModal={{
+                    showThirdwebBranding: false, // Hide Thirdweb branding
+                }}
             />
         </div>
-    )
+    );
 }
 
-//Customize Button and Modal Apperance
+// Customize Button and Modal Appearance
 function ButtonApperance() {
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Customize Button Apperance</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Customize Button Appearance</p>
             <ConnectButton
                 client={client}
                 // Customize button text
@@ -89,24 +93,15 @@ function ButtonApperance() {
                 connectModal={{
                     title: "Hello",
                     titleIcon: "",
-                    showThirdwebBranding: false,
-                    // welcomeScreen: {
-                    //     title: "Welcome",
-                    //     subtitle: "Sign in to continue",
-                    //     img: {
-                    //         src: "https://placehold.co/400",
-                    //         height: 200,
-                    //         width: 200,
-                    //     }
-                    // }
+                    showThirdwebBranding: false, // Hide Thirdweb branding
                     welcomeScreen: () => <CustomWelcomeScreen />
                 }}
             />
         </div>
-    )
+    );
 }
 
-//Custom Welcome Screen Component
+// Custom Welcome Screen Component
 function CustomWelcomeScreen() {
     return (
         <div>
@@ -117,17 +112,17 @@ function CustomWelcomeScreen() {
                 width={"100%"}
             />
         </div>
-    )
+    );
 }
 
-//Customize Button Theme
+// Customize Button Theme
 function CustomThemeButton() {
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Customize Button Theme</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Customize Button Theme</p>
             <ConnectButton
                 client={client}
-                //Customize button theme
+                // Customize button theme
                 theme={darkTheme({
                     colors: {
                         primaryText: "#F6F8FF",
@@ -149,12 +144,15 @@ function CustomThemeButton() {
                         connectedButtonBg: "#010101",
                         connectedButtonBgHover: "#2469DA",
                     },
-                    //Customize font
+                    // Customize font
                     fontFamily: "Arial Black",
                 })}
+                connectModal={{
+                    showThirdwebBranding: false, // Hide Thirdweb branding
+                }}
             />
         </div>
-    )
+    );
 }
 
 export default ConnectButtonPage;
