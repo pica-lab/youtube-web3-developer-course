@@ -60,8 +60,6 @@ function CustomAccountFactory() {
                     chain: optimism,
                     sponsorGas: true,
                 }}
-                showThirdwebBranding={false} // Hide Thirdweb branding
-            />
         </div>
     );
 }
