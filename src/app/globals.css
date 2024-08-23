@@ -17,27 +17,30 @@
 
 @layer base {
 	body {
-		@apply bg-zinc-950 text-neutral-200 flex items-center justify-center min-h-screen;
+		@apply bg-zinc-950 text-neutral-200;
+	}
+
+	.container {
+		@apply max-w-screen-lg mx-auto px-4;
+	}
+
+	.grid-container {
+		@apply grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 py-12;
+	}
+
+	.card {
+		@apply bg-zinc-800 p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl;
+	}
+
+	.card-title {
+		@apply text-xl font-bold text-white mb-4;
+	}
+
+	.card-subtitle {
+		@apply text-neutral-400;
 	}
 }
 
-.grid-container {
-	@apply grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 py-12 max-w-5xl mx-auto;
-}
-
-.card {
-	@apply bg-zinc-800 p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl;
-}
-
-.card-title {
-	@apply text-xl font-bold text-white mb-4;
-}
-
-.card-subtitle {
-	@apply text-neutral-400;
-}
-
-/* Adding some gradient and light effects for a modern look */
 body::before {
 	content: '';
 	position: absolute;
@@ -63,5 +66,5 @@ body::after {
 
 .content-container {
 	position: relative;
-	z-index: 10; /* Ensure the content stays above the background effects */
+	z-index: 10;
 }
