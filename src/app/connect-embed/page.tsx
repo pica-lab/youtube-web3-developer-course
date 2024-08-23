@@ -38,13 +38,19 @@ function DefaultConnectEmbed() {
             <p className="text-zinc-300 text-base mb-4 md:mb-4">Default Connect Embed</p>
             <ConnectEmbed
                 client={client}
-                showThirdwebBranding={false}  // Hide Thirdweb branding
+                connectModal={{
+        size: "compact",
+        showThirdwebBranding: false,
+      }} // Hide Thirdweb branding
             />
             {/* Show ConnectButton in connect state when wallet is connected */}
             {account && (
                 <ConnectButton 
                     client={client}
-                    showThirdwebBranding={false}  // Hide Thirdweb branding
+                   connectModal={{
+        size: "compact",
+        showThirdwebBranding: false,
+      }}
                 />
             )}
         </div>
@@ -78,13 +84,19 @@ function CustomWalletsConnectEmbed() {
                 wallets={wallets}
                 // Display recommended wallets
                 recommendedWallets={recommendedWallets}
-                showThirdwebBranding={false}  // Hide Thirdweb branding
+               connectModal={{
+        size: "compact",
+        showThirdwebBranding: false,
+      }}
             />
             {/* Show ConnectButton in connect state when wallet is connected */}
             {account && (
                 <ConnectButton 
                     client={client}
-                    showThirdwebBranding={false}  // Hide Thirdweb branding
+                    connectModal={{
+        size: "compact",
+        showThirdwebBranding: false,
+      }}
                 />
             )}
         </div>
@@ -126,13 +138,19 @@ function CustomThemeConnectEmbed() {
                     // Customize font
                     fontFamily: "Arial Black",
                 })}
-                showThirdwebBranding={false}  // Hide Thirdweb branding
+                connectModal={{
+        size: "compact",
+        showThirdwebBranding: false,
+      }}
             />
             {/* Show ConnectButton in connect state when wallet is connected */}
             {account && (
                 <ConnectButton 
                     client={client}
-                    showThirdwebBranding={false}  // Hide Thirdweb branding
+                    connectModal={{
+        size: "compact",
+        showThirdwebBranding: false,
+      }}
                 />
             )}
         </div>
