@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="py-20">
       <Header 
-        title="Web3 Developer Course"
+        title="Web3 Developer"
         subtitle="Learn how to build web3 applications with the Octopus Connect SDK."
       />
       <Menu />
