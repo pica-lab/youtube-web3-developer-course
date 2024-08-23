@@ -1,5 +1,5 @@
 import Image from "next/image";
-import thirdwebIcon from "@public/thirdweb.svg";
+import OctopusIcon from "@public/Octopus.svg";
 import { title } from "process";
 
 type HeaderProps = {
@@ -11,7 +11,7 @@ export function Header(props: HeaderProps) {
     return (
         <header className="flex flex-col items-center mb-20 md:mb-20">
           <Image 
-            src={thirdwebIcon} 
+            src={OctopusIcon} 
             alt="OctopusX" 
             width={120}
           />
