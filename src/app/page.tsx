@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer/Footer";
 
 export default function Home() {
   return (
-    <div className="px-4 md:px-10 lg:px-20">
+    <div className="container">
       <Header 
         title="Web3 Developer"
         subtitle="Learn how to build web3 applications with the Octopus Connect SDK."
