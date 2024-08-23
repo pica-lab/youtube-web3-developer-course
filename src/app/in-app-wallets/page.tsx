@@ -22,9 +22,6 @@ function InAppWalletOptions() {
     return (
       <div className="grid gap-4 lg:grid-cols-3 justify-center">
         <AllOptions />
-        <EmailOnly />
-        <SocialOnly />
-        <PhonePassKey />
       </div>
     );
 }
@@ -42,71 +39,6 @@ function AllOptions () {
     )
 }
 
-// In-App Wallet options with email only
-function EmailOnly () {
-    return (
-        <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Email Only</p>
-            <ConnectButton  
-                client={client}
-                wallets={[ 
-                    inAppWallet({
-                        auth: {
-                            options: [
-                                "email"
-                            ]
-                        }
-                    }) 
-                ]}
-            />
-        </div>
-    )
-}
 
-// In-App Wallet options with social only
-function SocialOnly () {
-    return (
-        <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Social Only</p>
-            <ConnectButton  
-                client={client}
-                wallets={[ 
-                    inAppWallet({
-                        auth: {
-                            // Select social login options
-                            options: [
-                                "google",
-                                // "facebook",
-                                // "apple"
-                            ]
-                        }
-                    }) 
-                ]}
-            />
-        </div>
-    )
-}
-
-// In-App Wallet options with phone and pass key
-function PhonePassKey () {
-    return (
-        <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Phone + Pass Key</p>
-            <ConnectButton  
-                client={client}
-                wallets={[ 
-                    inAppWallet({
-                        auth: {
-                            options: [
-                                "phone",
-                                "passkey"
-                            ]
-                        }
-                    }) 
-                ]}
-            />
-        </div>
-    )
-}
 
 export default InAppWalletsPage;
