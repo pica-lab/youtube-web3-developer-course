@@ -7,7 +7,7 @@ export default function Home() {
     <div className="py-20">
       <Header 
         title="Web3 Developer Course"
-        subtitle="Learn how to build web3 applications with the Thirdweb Connect SDK."
+        subtitle="Learn how to build web3 applications with the Octopus Connect SDK."
       />
       <Menu />
       <Footer/>
