@@ -15,16 +15,16 @@ const ConnectEmbedPage: React.FC = () => {
             <ConnectEmbeds />
             <Footer />
         </div>
-    )
+    );
 };
 
 function ConnectEmbeds() {
     return (
-      <div className="grid gap-4 lg:grid-cols-3 justify-center">
-        <DefaultConnectEmbed />
-        <CustomWalletsConnectEmbed />
-        <CustomThemeConnectEmbed />
-      </div>
+        <div className="grid gap-4 lg:grid-cols-3 justify-center">
+            <DefaultConnectEmbed />
+            <CustomWalletsConnectEmbed />
+            <CustomThemeConnectEmbed />
+        </div>
     );
 }
 
@@ -35,18 +35,20 @@ function DefaultConnectEmbed() {
 
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Default Connect Embed</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Default Connect Embed</p>
             <ConnectEmbed
                 client={client}
+                showThirdwebBranding={false}  // Hide Thirdweb branding
             />
             {/* Show ConnectButton in connect state when wallet is connected */}
             {account && (
                 <ConnectButton 
                     client={client}
+                    showThirdwebBranding={false}  // Hide Thirdweb branding
                 />
             )}
         </div>
-    )
+    );
 }
 
 // Customize Wallets Displayed in ConnectEmbed
@@ -54,11 +56,11 @@ function CustomWalletsConnectEmbed() {
     // Check if wallet is connected
     const account = useActiveAccount();
 
-    //Create an array of recommended wallets
+    // Create an array of recommended wallets
     const recommendedWallets = [
         createWallet("com.coinbase.wallet"),
     ];
-    //Create an array of wallets to display
+    // Create an array of wallets to display
     const wallets = [
         createWallet("com.coinbase.wallet"),
         createWallet("io.metamask"),
@@ -66,25 +68,27 @@ function CustomWalletsConnectEmbed() {
         createWallet("com.exodus"),
         createWallet("com.robinhood.wallet")
     ];
-    
+
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Customize Wallets Connect Embed</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Customize Wallets Connect Embed</p>
             <ConnectEmbed
                 client={client}
                 // Display custom wallets
                 wallets={wallets}
                 // Display recommended wallets
                 recommendedWallets={recommendedWallets}
+                showThirdwebBranding={false}  // Hide Thirdweb branding
             />
             {/* Show ConnectButton in connect state when wallet is connected */}
             {account && (
                 <ConnectButton 
                     client={client}
+                    showThirdwebBranding={false}  // Hide Thirdweb branding
                 />
             )}
         </div>
-    )
+    );
 }
 
 // Customize modal theme in ConnectEmbed
@@ -94,7 +98,7 @@ function CustomThemeConnectEmbed() {
 
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Custom Theme Connect Embed</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Custom Theme Connect Embed</p>
             <ConnectEmbed
                 client={client}
                 // Customize modal theme
@@ -119,18 +123,20 @@ function CustomThemeConnectEmbed() {
                         connectedButtonBg: "#010101",
                         connectedButtonBgHover: "#2469DA",
                     },
-                    //Customize font
+                    // Customize font
                     fontFamily: "Arial Black",
                 })}
+                showThirdwebBranding={false}  // Hide Thirdweb branding
             />
             {/* Show ConnectButton in connect state when wallet is connected */}
             {account && (
                 <ConnectButton 
                     client={client}
+                    showThirdwebBranding={false}  // Hide Thirdweb branding
                 />
             )}
         </div>
-    )
+    );
 }
 
 export default ConnectEmbedPage;
