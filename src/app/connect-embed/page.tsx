@@ -7,7 +7,7 @@ import { createWallet } from "thirdweb/wallets";
 
 const ConnectEmbedPage: React.FC = () => {
     return (
-        <div className="px-4 md:px-10 lg:px-20">
+        <div className="container">
             <Header 
                 title="ConnectEmbed UI Component"
                 subtitle="Learn what our ConnectEmbed UI component is, how to use it, and how to customize it."
