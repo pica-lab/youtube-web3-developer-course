@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const CustomLoginFlowPage: React.FC = () => {
     return (
-        <div className="px-4 md:px-10 lg:px-20">
+        <div className="container">
             <Header 
                 title="Custom Login Flow"
                 subtitle="Learn how to use Connect SDK to build your own custom login flow."
