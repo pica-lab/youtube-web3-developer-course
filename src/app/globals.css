@@ -17,9 +17,9 @@
 
 @layer base {
     body {
-        @apply bg-blue-950 text-neutral-200;
+        @apply text-neutral-200;
         padding: 0 1rem;
-        background: linear-gradient(135deg, rgba(13, 71, 161, 1) 0%, rgba(2, 48, 71, 1) 100%);
+        background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
         background-size: 400% 400%;
         animation: gradientAnimation 15s ease infinite;
         display: flex;
