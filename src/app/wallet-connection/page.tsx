@@ -10,12 +10,12 @@ const WalletConnectionPage: React.FC = () => {
         <div className="py-20">
             <Header 
                 title="Wallet Connection"
-                subtitle="Learn how get data and interact with the blockchain with a connected wallet."
+                subtitle="Learn how to get data and interact with the blockchain with a connected wallet."
             />
             <InAppWalletOptions />
             <Footer />
         </div>
-    )
+    );
 };
 
 function InAppWalletOptions() {
@@ -32,12 +32,15 @@ function InAppWalletOptions() {
 function ConnectWallet () {
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Connect a wallet</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Connect a wallet</p>
             <ConnectButton
                 client={client}
+                connectModal={{
+                    showThirdwebBranding: false, // Hide Thirdweb branding
+                }}
             />
         </div>
-    )
+    );
 }
 
 function GetWallet () {
@@ -45,10 +48,10 @@ function GetWallet () {
     
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Get Wallet</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Get Wallet</p>
             <p className="text-zinc-300 text-base mb-4 md:mb-4">{wallet?.id}</p>
         </div>
-    )
+    );
 }
 
 function GetWalletAccount () {
@@ -56,22 +59,22 @@ function GetWalletAccount () {
     
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">Get Account</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Get Account</p>
             <p className="text-zinc-300 text-base mb-4 md:mb-4">{account?.address}</p>
         </div>
-    )
+    );
 }
 
 function GetActiveChain () {
     const chain = useActiveWalletChain();
     return (
         <div className="flex flex-col items-center mb-20 md:mb-20">
-            <p  className="text-zinc-300 text-base mb-4 md:mb-4">ActiveChain</p>
+            <p className="text-zinc-300 text-base mb-4 md:mb-4">Active Chain</p>
             <p className="text-zinc-300 text-base mb-4 md:mb-4">{chain?.id}</p>
             <p className="text-zinc-300 text-base mb-4 md:mb-4">{chain?.name}</p>
             <p className="text-zinc-300 text-base mb-4 md:mb-4">{chain?.nativeCurrency?.symbol}</p>
         </div>
-    )
+    );
 }
 
 export default WalletConnectionPage;
