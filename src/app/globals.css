@@ -18,7 +18,7 @@
 @layer base {
     body {
         @apply text-neutral-200;
-        padding: 0 1rem;
+        padding: 0;
         background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
         background-size: 400% 400%;
         animation: gradientAnimation 15s ease infinite;
@@ -67,67 +67,50 @@
         }
     }
 
-    /* Footer styling */
-    footer {
+    /* Footer 样式 */
+    .footer-container {
         width: 100%;
         background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
-        padding: 1.5rem 0;
+        padding: 2rem 0;
         text-align: center;
         position: relative;
-        overflow: hidden;
-        box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
+        z-index: 10; /* 确保 footer 在前面 */
     }
 
-    footer::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 300%;
-        height: 300%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-        opacity: 0.05;
-        transform: translate(-50%, -50%);
-        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
     }
 
-    footer:hover::before {
-        transform: translate(-50%, -50%);
-        opacity: 0.1;
-    }
-
-    footer a {
+    .footer-link {
         color: #A8DADC;
-        margin: 0 1rem;
         transition: color 0.3s ease;
+        text-decoration: none;
     }
 
-    footer a:hover {
+    .footer-link:hover {
         color: #F1FAEE;
+        text-decoration: underline;
     }
 
-    /* Card styling */
-    .card {
-        background-color: #121826;
-        border: 1px solid #1F2A44;
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .footer-bottom {
+        margin-top: 1rem;
     }
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        background-color: #1B2438;
+    .footer-home {
+        color: #4DB3F4;
     }
 
-    .card h3 {
-        color: #A8DADC;
-        margin-bottom: 0.75rem;
+    .footer-home:hover {
+        color: #63CCFF;
     }
 
-    .card p {
+    .footer-copyright {
         color: #CAD2E2;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
     }
 }
