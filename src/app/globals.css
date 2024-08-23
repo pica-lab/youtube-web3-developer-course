@@ -17,8 +17,26 @@
 
 @layer base {
     body {
-        @apply bg-zinc-950 text-neutral-200;
+        @apply bg-blue-950 text-neutral-200;
         padding: 0 1rem;
+        background: linear-gradient(135deg, rgba(13, 71, 161, 1) 0%, rgba(2, 48, 71, 1) 100%);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
     }
 
     .container {
@@ -26,6 +44,7 @@
         margin-left: auto;
         margin-right: auto;
         padding: 1rem;
+        flex: 1;
     }
 
     .grid-container {
@@ -36,53 +55,15 @@
         justify-items: center;
     }
 
-    footer {
-        width: 100%;
-        background-color: #102A43;
-        padding: 1rem 0;
-        margin: 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
+    @media (min-width: 768px) {
+        .grid-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
-    footer::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 300%;
-        height: 300%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 80%);
-        opacity: 0.1;
-        transform: translate(-50%, -50%);
-        transition: transform 0.5s ease-out;
-    }
-
-    footer:hover::before {
-        transform: translate(0, 0);
-        opacity: 0.2;
-    }
-
-    footer a {
-        color: #A8DADC;
-        margin: 0 0.5rem;
-        transition: color 0.3s ease;
-    }
-
-    footer a:hover {
-        color: #F1FAEE;
-    }
-}
-
-@media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
+    @media (min-width: 1024px) {
+        .grid-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }
