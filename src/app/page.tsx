@@ -28,11 +28,7 @@ function Menu() {
         href="/connect-embed"
         description="Learn what our ConnectEmbed UI component is, how to use it, and how to customize it."
       />
-      <MenuItem
-        title="In-App Wallet"
-        href="/in-app-wallets"
-        description="Learn what our In-App Wallets are and how to implement them in your application."
-      />
+     
       <MenuItem
         title="Custom Login Flow"
         href="/custom-login-flow"
