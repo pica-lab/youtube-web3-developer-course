@@ -66,7 +66,7 @@ function CustomAccountFactory() {
     );
 }
 
-// Build a custom AA connect flow
+// Build a custom AA connect flow using Smart Wallet
 function CustomAAConnectFlow() {
     // Get active account and wallet
     const account = useActiveAccount();
@@ -82,10 +82,14 @@ function CustomAAConnectFlow() {
     });
     const { disconnect } = useDisconnect();
 
-    // Create wallet and connect
+    // Create smart wallet and connect
     const connectSmartWallet = async () => {
         connect(async () => {
-            const wallet = createWallet("io.metamask");
+            const wallet = createWallet("smart", {
+                factoryAddress: "0xB724c771d34dE6f93764D6d8D6924F3108e8d426", // Use the custom factory address
+                chain: optimism,
+                sponsorGas: true,
+            });
             await wallet.connect({
                 client: client,
                 chain: optimism,
