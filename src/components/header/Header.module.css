@@ -1,1 +1,49 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 120px;
+    animation: jump 3s ease-in-out infinite; /* 添加跳动动画 */
+    margin-bottom: 20px; /* 给 logo 和标题之间增加空间 */
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    animation: jump 1.5s ease-in-out infinite; /* 鼠标悬停时加速跳动动画 */
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #F5F5F5;
+    margin-bottom: 10px; /* 标题和副标题之间的间距 */
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 4rem; /* 中等以上屏幕上的标题字体大小 */
+        font-weight: 700;
+    }
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #A0AEC0;
+    text-align: center;
+}
+
+/* 定义跳动动画 */
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* 向上移动10px */
+    }
+}
 
