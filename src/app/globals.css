@@ -69,12 +69,13 @@
 
     /* Footer 样式 */
     .footer-container {
-        width: 100%;
-        background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
+        width: 100%; /* 确保 footer 宽度为 100% */
+        margin: 0; /* 移除默认的 margin */
         padding: 2rem 0;
+        background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
         text-align: center;
         position: relative;
-        z-index: 10; /* 确保 footer 在前面 */
+        z-index: 10;
     }
 
     .footer-links {
