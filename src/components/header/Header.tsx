@@ -1,6 +1,7 @@
+import { title } from "process";
 import Image from "next/image";
 import OctopusIcon from "@public/Octopus.svg";
-import { title } from "process";
+import styles from './Header.module.css';
 
 type HeaderProps = {
     title: string;
@@ -9,16 +10,16 @@ type HeaderProps = {
 
 export function Header(props: HeaderProps) {
     return (
-        <header className="flex flex-col items-center mb-20 md:mb-20">
+        <header className={styles.headerContainer}>
           <Image 
             src={OctopusIcon} 
             alt="OctopusX" 
-            width={120}
+            className={styles.logo}
           />
-          <h1 className="text-2xl md:text-6xl font-semibold md:font-bold tracking-tighter mb-6 text-zinc-100">
+          <h1 className={styles.title}>
             {props.title}
           </h1>
-          <p>
+          <p className={styles.subtitle}>
             {props.subtitle}
           </p>
         </header>
