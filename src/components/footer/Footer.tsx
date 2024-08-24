@@ -1,32 +1,31 @@
 import Link from "next/link";
-import styles from './Footer.module.css';  // 导入模块化CSS
+import styles from './footer.module.css';  // 导入模块化CSS
 
-
-export function Footer() {
+export const Footer = () => {
     return (
-        <footer className="flex flex-col items-center mt-20 py-10 bg-gray-800 text-gray-300">
-            <div className="flex flex-row space-x-4 mb-4">
-                <Link href="https://octopus.com" className="hover:underline">
-                    Octopus Deploy
+        <footer className={styles.footerContainer}>
+            <div className={styles.footerLinks}>
+                <Link href="https://octopus.com" passHref>
+                    <a className={styles.footerLink}>Octopus Deploy</a>
                 </Link>
-                <Link href="https://docs.octopus.network" className="hover:underline">
-                    Documentation
+                <Link href="https://docs.octopus.network" passHref>
+                    <a className={styles.footerLink}>Documentation</a>
                 </Link>
-                <Link href="https://blog.octopus.network" className="hover:underline">
-                    Blog
+                <Link href="https://blog.octopus.network" passHref>
+                    <a className={styles.footerLink}>Blog</a>
                 </Link>
-                <Link href="https://community.octopus.network" className="hover:underline">
-                    Community
+                <Link href="https://community.octopus.network" passHref>
+                    <a className={styles.footerLink}>Community</a>
                 </Link>
             </div>
-            <div className="flex flex-col items-center">
-                <Link href="/" className="hover:underline text-blue-400">
-                    Back to Home
+            <div className={styles.footerBottom}>
+                <Link href="/" passHref>
+                    <a className={`${styles.footerLink} ${styles.footerHome}`}>Back to Home</a>
                 </Link>
-                <div className="text-sm mt-4">
+                <div className={styles.footerCopyright}>
                     &copy; {new Date().getFullYear()} Octopus X. All rights reserved.
                 </div>
             </div>
         </footer>
     );
-}
+};
