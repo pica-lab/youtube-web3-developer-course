@@ -15,104 +15,54 @@
     font-variation-settings: 'slnt' 0;
 }
 
-@layer base {
-    body {
-        @apply text-neutral-200;
-        margin: 0; /* 确保没有默认的 margin */
-        padding: 0; /* 确保没有默认的 padding */
-        background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
-        background-size: 400% 400%;
-        animation: gradientAnimation 15s ease infinite;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
+body {
+    @apply text-neutral-200;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-    @keyframes gradientAnimation {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
     }
-
-    .container {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 1rem;
-        flex: 1;
+    50% {
+        background-position: 100% 50%;
     }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    flex: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-items: center;
+}
+
+@media (min-width: 768px) {
     .grid-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 2rem;
-        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-    @media (min-width: 768px) {
-        .grid-container {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .grid-container {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    /* Footer 样式 */
-    .footer-container {
-        width: 100vw; /* 确保覆盖整个视口宽度 */
-        margin-left: calc(-50vw + 50%); /* 修正浏览器默认的 body padding 和 margin 问题 */
-        padding: 2rem 0;
-        background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
-        text-align: center;
-        position: relative;
-        z-index: 10;
-    }
-
-    .footer-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    .footer-link {
-        color: #A8DADC;
-        transition: color 0.3s ease;
-        text-decoration: none;
-    }
-
-    .footer-link:hover {
-        color: #F1FAEE;
-        text-decoration: underline;
-    }
-
-    .footer-bottom {
-        margin-top: 1rem;
-    }
-
-    .footer-home {
-        color: #4DB3F4;
-    }
-
-    .footer-home:hover {
-        color: #63CCFF;
-    }
-
-    .footer-copyright {
-        color: #CAD2E2;
-        font-size: 0.875rem;
-        margin-top: 0.5rem;
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
