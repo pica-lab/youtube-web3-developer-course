@@ -1,1 +1,46 @@
+.footerContainer {
+    width: 100vw; /* 覆盖整个视口宽度 */
+    margin-left: calc(-50vw + 50%); /* 修正偏移问题 */
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
 
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footerLink {
+    color: #A8DADC;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footerLink:hover {
+    color: #F1FAEE;
+    text-decoration: underline;
+}
+
+.footerBottom {
+    margin-top: 1rem;
+}
+
+.footerHome {
+    color: #4DB3F4;
+}
+
+.footerHome:hover {
+    color: #63CCFF;
+}
+
+.footerCopyright {
+    color: #CAD2E2;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
