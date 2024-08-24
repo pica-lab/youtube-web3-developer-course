@@ -1,4 +1,6 @@
 import Link from "next/link";
+import styles from './Footer.module.css';  // 导入模块化CSS
+
 
 export function Footer() {
     return (
