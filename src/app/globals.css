@@ -18,7 +18,8 @@
 @layer base {
     body {
         @apply text-neutral-200;
-        padding: 0;
+        margin: 0; /* 确保没有默认的 margin */
+        padding: 0; /* 确保没有默认的 padding */
         background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
         background-size: 400% 400%;
         animation: gradientAnimation 15s ease infinite;
@@ -69,8 +70,8 @@
 
     /* Footer 样式 */
     .footer-container {
-        width: 100%; /* 确保 footer 宽度为 100% */
-        margin: 0; /* 移除默认的 margin */
+        width: 100vw; /* 确保覆盖整个视口宽度 */
+        margin-left: calc(-50vw + 50%); /* 修正浏览器默认的 body padding 和 margin 问题 */
         padding: 2rem 0;
         background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
         text-align: center;
