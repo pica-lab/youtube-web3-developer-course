@@ -1,6 +1,7 @@
+/* footer.module.css */
 .footerContainer {
-    width: 100vw; /* 覆盖整个视口宽度 */
-    margin-left: calc(-50vw + 50%); /* 修正偏移问题 */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
     padding: 2rem 0;
     background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
     text-align: center;
