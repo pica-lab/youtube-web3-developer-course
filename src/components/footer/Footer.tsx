@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from './footer.module.css';  // 导入模块化CSS
+import styles from './Footer.module.css';  // 导入模块化CSS
 
 export const Footer = () => {
     return (
