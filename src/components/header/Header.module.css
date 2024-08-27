@@ -8,12 +8,12 @@
     border-radius: 8px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     max-width: 100%;
-    max-height: 60vh; /* 控制 header 高度 */
+    max-height: 50vh; /* 控制 header 的最大高度，减少占用空间 */
     overflow: hidden;
 }
 
 .logo {
-    width: 100px; /* 调整 logo 大小 */
+    width: 100px;
     animation: jump 3s ease-in-out infinite;
     margin-bottom: 15px;
     transition: transform 0.3s ease-in-out;
@@ -35,14 +35,14 @@
 
 @media (min-width: 768px) {
     .title {
-        font-size: 3rem; /* 调整中等以上屏幕上的标题字体大小 */
+        font-size: 3rem;
         font-weight: 700;
     }
 }
 
 @media (min-width: 1024px) {
     .title {
-        font-size: 3.5rem; /* 控制大屏幕上的标题字体大小 */
+        font-size: 3.5rem;
     }
 }
 
