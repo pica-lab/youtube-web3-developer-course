@@ -1,56 +1,68 @@
-.headerContainer {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: 'slnt' 0;
+}
+
+body {
+    @apply text-neutral-200;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 20px; /* 添加内边距增加间距 */
-    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); /* 背景渐变色 */
-    border-radius: 8px; /* 添加圆角效果 */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* 添加阴影提升层次感 */
+    min-height: 100vh;
 }
 
-.logo {
-    width: 120px;
-    animation: jump 3s ease-in-out infinite; /* 添加跳动动画 */
-    margin-bottom: 20px; /* 给 logo 和标题之间增加空间 */
-    transition: transform 0.3s ease-in-out;
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-.logo:hover {
-    animation: jump 1.5s ease-in-out infinite; /* 鼠标悬停时加速跳动动画 */
-    transform: scale(1.1); /* 鼠标悬停时略微放大 */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    flex: 1;
 }
 
-.title {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #F5F5F5;
-    margin-bottom: 10px; /* 标题和副标题之间的间距 */
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* 添加文本阴影 */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-items: center;
 }
 
 @media (min-width: 768px) {
-    .title {
-        font-size: 4rem; /* 中等以上屏幕上的标题字体大小 */
-        font-weight: 700;
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.subtitle {
-    font-size: 1.25rem;
-    color: #A0AEC0;
-    text-align: center;
-    max-width: 800px; /* 限制副标题的最大宽度 */
-    margin: 0 auto; /* 使副标题居中 */
-}
-
-/* 定义跳动动画 */
-@keyframes jump {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* 向上移动10px */
+@media (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
