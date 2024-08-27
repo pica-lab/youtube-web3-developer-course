@@ -22,9 +22,10 @@ body {
     background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
-    display: block; /* 确保页面内容可以正常滚动 */
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    overflow-y: auto; /* 允许垂直滚动 */
+    overflow-y: auto;
 }
 
 @keyframes gradientAnimation {
@@ -48,7 +49,8 @@ body {
     border-radius: 12px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
-    min-height: calc(100vh - 120px); /* 确保容器至少填充页面高度 */
+    margin-top: 4rem; /* 增加顶部和底部的空间 */
+    margin-bottom: 4rem; 
 }
 
 .grid-container {
