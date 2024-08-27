@@ -11,7 +11,7 @@ export const Footer = () => {
                 <Link href="https://docs.octopus.network" passHref>
                     <a className={styles.footerLink}>Documentation</a>
                 </Link>
-                <Link href="https://blog.octopus.network" passHref>
+                <Link href="https://octopus.com/docs" passHref>
                     <a className={styles.footerLink}>Blog</a>
                 </Link>
                 <Link href="https://community.octopus.network" passHref>
