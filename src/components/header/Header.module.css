@@ -7,9 +7,9 @@
     background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
     border-radius: 8px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-    max-width: 100%; /* 确保 header 不会超出页面宽度 */
-    max-height: 60vh; /* 控制 header 的最大高度 */
-    overflow: hidden; /* 防止内容超出容器 */
+    max-width: 100%;
+    max-height: 60vh; /* 控制 header 高度 */
+    overflow: hidden;
 }
 
 .logo {
