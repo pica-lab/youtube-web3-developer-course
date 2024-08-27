@@ -8,7 +8,7 @@ export const Footer = () => {
                 <Link href="https://octopus.com" passHref>
                     <a className={styles.footerLink}>Octopus Deploy</a>
                 </Link>
-                <Link href="https://docs.octopus.network" passHref>
+                <Link href="https://octopus.com/docs" passHref>
                     <a className={styles.footerLink}>Documentation</a>
                 </Link>
                 <Link href="https://octopus.com/docs" passHref>
