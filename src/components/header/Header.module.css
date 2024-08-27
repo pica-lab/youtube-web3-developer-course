@@ -3,6 +3,10 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
@@ -14,6 +18,7 @@
 
 .logo:hover {
     animation: jump 1.5s ease-in-out infinite; /* 鼠标悬停时加速跳动动画 */
+    transform: scale(1.1); /* 鼠标悬停时略微放大 */
 }
 
 .title {
@@ -22,6 +27,7 @@
     color: #F5F5F5;
     margin-bottom: 10px; /* 标题和副标题之间的间距 */
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* 添加文本阴影 */
 }
 
 @media (min-width: 768px) {
@@ -35,6 +41,8 @@
     font-size: 1.25rem;
     color: #A0AEC0;
     text-align: center;
+    max-width: 800px; /* 限制副标题的最大宽度 */
+    margin: 0 auto; /* 使副标题居中 */
 }
 
 /* 定义跳动动画 */
@@ -46,4 +54,3 @@
         transform: translateY(-10px); /* 向上移动10px */
     }
 }
-
