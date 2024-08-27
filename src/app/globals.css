@@ -22,10 +22,9 @@ body {
     background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 确保内容水平居中 */
+    display: block; /* 修改为 block 确保页面内容可以垂直滚动 */
     min-height: 100vh;
+    overflow-y: auto; /* 确保页面可以垂直滚动 */
 }
 
 @keyframes gradientAnimation {
@@ -44,36 +43,50 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-    flex: 1;
-    background: rgba(255, 255, 255, 0.05); /* 使用轻微的白色透明背景，增加内容区分 */
-    border-radius: 12px; /* 使容器的边角更加柔和 */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* 增加更柔和的阴影效果 */
-    backdrop-filter: blur(10px); /* 通过背景模糊效果，提升质感 */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+header {
+    padding: 2rem 1rem; /* 减少 padding 以控制 header 高度 */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* 增加 header 的背景色区分 */
+    border-radius: 8px;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem; /* 加大卡片之间的间距，使布局更舒适 */
+    gap: 2rem;
     margin-top: 2rem;
-    padding: 1rem; /* 为网格增加内边距，避免内容贴边 */
-    width: 100%; /* 确保网格容器在小屏幕上占满宽度 */
+    padding: 1rem;
+    width: 100%;
     justify-items: center;
 }
 
 .grid-item {
-    background: rgba(255, 255, 255, 0.1); /* 卡片背景色，增加层次感 */
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 1.5rem;
-    width: 100%; /* 确保卡片在不同屏幕上有一致的宽度 */
-    max-width: 350px; /* 限制卡片最大宽度，保持视觉统一 */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* 为卡片增加轻微的阴影 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 增加过渡效果 */
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .grid-item:hover {
-    transform: translateY(-5px); /* 悬停时卡片略微上升 */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); /* 悬停时增加阴影深度 */
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
 }
 
 @media (min-width: 768px) {
@@ -85,15 +98,5 @@ body {
 @media (min-width: 1024px) {
     .grid-container {
         grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .container {
-        padding: 1.5rem;
-    }
-    
-    .grid-item {
-        max-width: 100%; /* 确保小屏幕下卡片占满容器 */
     }
 }
