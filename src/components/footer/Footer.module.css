@@ -1,14 +1,11 @@
 .footerContainer {
-    width: 100%;
-    padding: 2rem 0;
-    background: linear-gradient(135deg, #0A0F29 0%, #141B3A 100%);
+    padding: 1rem;
     text-align: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    margin-top: auto; /* 确保 footer 跟随内容 */
+    width: 100%; /* 确保 footer 拉伸至页面宽度 */
     box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.5);
-    flex-shrink: 0;
 }
 
 .footerLinks {
