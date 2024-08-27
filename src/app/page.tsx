@@ -17,7 +17,7 @@ export default function Home() {
 
 function Menu() {
   return (
-    <div className="grid gap-4 lg:grid-cols-3 justify-center px-10">
+    <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-2 justify-center px-10">
       <MenuItem
         title="ConnectButton"
         href="/connect-button"
@@ -28,7 +28,6 @@ function Menu() {
         href="/connect-embed"
         description="Learn what our ConnectEmbed UI component is, how to use it, and how to customize it."
       />
-     
       <MenuItem
         title="Custom Login Flow"
         href="/custom-login-flow"
@@ -47,7 +46,7 @@ function MenuItem(props: { title: string; href: string; description: string }) {
   return (
     <Link
       href={props.href}
-      className="flex flex-col border border-zinc-800 p-4 rounded-lg hover:bg-zinc-900 transition-colors hover:border-zinc-700"
+      className="flex flex-col border border-zinc-800 p-6 rounded-lg hover:bg-zinc-900 transition-colors hover:border-zinc-700"
     >
       <article>
         <h2 className="text-lg font-semibold mb-2">{props.title}</h2>
